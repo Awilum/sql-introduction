@@ -1,0 +1,44 @@
+# =========================
+# Output 
+# =========================
+output/
+**/output/
+dist/
+build/
+*.pdf
+*.epub
+*.html
+
+# =========================
+# macOS system files
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# Temporary files
+# =========================
+tmp/
+temp/
+*.tmp
+*.swp
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.iml
