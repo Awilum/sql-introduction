@@ -27,7 +27,7 @@
 
 В нашей таблице это:
 
-```
+```sql
 id INT
 level INT
 rating INT

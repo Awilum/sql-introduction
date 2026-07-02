@@ -10,7 +10,7 @@
 
 Например, если мы хотим выбрать игроков, которые зарегистрировались в игре после 1 января 2025 года, мы пишем следующий запрос:
 
-```
+```sql
 SELECT nickname, level, registration_date
 FROM players
 WHERE registration_date > '2025-01-15';
@@ -28,7 +28,7 @@ WHERE registration_date > '2025-01-15';
 
 Если мы хотим выбрать только тех опытных игроков, у которых уровень строго выше 40, а в поле звания (`rank_title`) указано 'Gold', запрос будет выглядеть так:
 
-```
+```sql
 SELECT nickname, level, rank_title
 FROM players
 WHERE level > 40
@@ -64,7 +64,7 @@ WHERE level > 40
 
 Например, задача: *«Покажи мне игроков из гильдий 'Грифоны Эрафии' или 'Фениксы Конфлюкса', у которых соревновательный рейтинг превышает 2000 очков и которые заходили в игру после 1 июня 2026 года»*.
 
-```
+```sql
 SELECT nickname, guild, rating, last_login
 FROM players
 WHERE (guild = 'Грифоны Эрафии' OR guild = 'Фениксы Конфлюкса')
@@ -87,7 +87,7 @@ WHERE (guild = 'Грифоны Эрафии' OR guild = 'Фениксы Конф
 
 Если использовать `NOT`, мы можем легко исключить ненужное. Например, найдем игроков, которые зарегистрировались **не** в январе и **не** в феврале 2025 года:
 
-```
+```sql
 SELECT nickname, registration_date
 FROM players
 WHERE registration_date NOT IN ('2025-01-15', '2025-02-10');
@@ -101,31 +101,31 @@ WHERE registration_date NOT IN ('2025-01-15', '2025-02-10');
 
 - **Равенство и неравенство (`=`, `<>`)**
   
-  ```
+  ```sql
   SELECT * FROM players WHERE rank_title = 'Silver';
   SELECT * FROM players WHERE city <> 'Москва'; -- все города, кроме Москвы
   ```
 - **Сравнение (`>`, `<`, `>=`, `<=`)**
   
-  ```
+  ```sql
   SELECT * FROM players WHERE level >= 50;
   SELECT * FROM players WHERE wins < 10;
   ```
 - **Проверка диапазона (`BETWEEN .. AND`)**
   
-  ```
+  ```sql
   SELECT * FROM players WHERE rating BETWEEN 1500 AND 2500; -- включает границы
   ```
 - **Поиск по шаблону текста (`LIKE`, `NOT LIKE`)**
   
   Знак `%` означает любое количество любых символов. Например, найдем все яндексовские почты:
   
-  ```
+  ```sql
   SELECT * FROM players WHERE email LIKE '%@yandex.ru';
   ```
 - **Проверка на пустые значения (`IS NULL`, `IS NOT NULL`)**
   
-  ```
+  ```sql
   SELECT * FROM players WHERE guild IS NULL; -- игроки без клана
   ```
 
@@ -137,7 +137,7 @@ WHERE registration_date NOT IN ('2025-01-15', '2025-02-10');
 
 - **Сложение (`+`)** — посчитаем общее число сыгранных матчей (победы + поражения):
   
-  ```
+  ```sql
   SELECT nickname, wins, losses, 
          (wins + losses) AS total_games
   FROM players
@@ -145,7 +145,7 @@ WHERE registration_date NOT IN ('2025-01-15', '2025-02-10');
   ```
 - **Вычитание (`-`)** — узнаем, на сколько побед у игрока больше, чем поражений:
   
-  ```
+  ```sql
   SELECT nickname, 
          (wins - losses) AS win_difference
   FROM players
