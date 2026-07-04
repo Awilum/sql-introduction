@@ -78,6 +78,7 @@ EOF
   echo "Building PDF ($LOCALE)..."
 
   pandoc \
+    -f markdown+autolink_bare_uris \
     "${SRC[@]}" \
     --resource-path="$RESOURCE_PATH" \
     --pdf-engine=typst \
@@ -93,6 +94,7 @@ EOF
   echo "Building EPUB ($LOCALE)..."
 
   pandoc \
+    -f markdown+autolink_bare_uris \
     "$SRC_DIR/metadata.yaml" \
     "$GEN_DIR/00-build-info.md" \
     $SRC_DIR/chapters/*.md \
