@@ -6,9 +6,21 @@
 ]
 
 #set table(
-  inset: 6pt,
-  stroke: none
+  inset: (x: 8pt, y: 6pt),
+  stroke: (
+    x: 0.4pt + rgb("#cccccc"),
+    y: 0.4pt + rgb("#cccccc"),
+  ),
 )
+
+#show table.cell.where(y: 0): set text(weight: "bold")
+
+#show figure.where(kind: table): set block(
+  above: 1.4em,
+  below: 1.4em,
+)
+
+#show figure.where(kind: table): set align(left)
 
 #show raw.where(block: false): it => box(
   fill: rgb("#f6f8fa"),
@@ -201,11 +213,6 @@ $endif$
 
 #show heading: set block(
   above: 2em,
-  below: 1.2em,
-)
-
-#show figure.where(kind: table): set block(
-  above: 1.2em,
   below: 1.2em,
 )
 
