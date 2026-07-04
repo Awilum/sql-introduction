@@ -10,6 +10,26 @@
   stroke: none
 )
 
+#show raw.where(block: false): it => box(
+  fill: rgb("#f6f8fa"),
+  stroke: rgb("#efefef"),
+  radius: 2pt,
+  inset: (x: 3pt, y: 3pt),
+  text(size: 1em)[#it],
+)
+
+#show raw.where(block: true): it => {
+  v(0.8em)
+  box(
+    fill: rgb("#fafafa"),
+    stroke: rgb("#cccccc"),
+    radius: 5pt,
+    inset: 10pt,
+    it,
+  )
+  v(0.8em)
+}
+
 #show figure.where(
   kind: table
 ): set figure.caption(position: $if(table-caption-position)$$table-caption-position$$else$top$endif$)
