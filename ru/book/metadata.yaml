@@ -38,7 +38,7 @@ geometry:
   - right=20mm
 
 # Цветные ссылки
-colorlinks: true
+linkcolor: "#1a73e8"
 
 # Язык переносов
 babel-lang: russian
