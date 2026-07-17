@@ -16,8 +16,8 @@
 
 ![](../images/sandbox.png)
 
-Доступ к курсу и SQL-песочнице:
-https://stepik.org/a/290855
+Доступ к курсу и SQL-песочнице: [Записаться на курс «SQL Введение»](https://stepik.org/a/290855?utm_source=ebook&utm_medium=book&utm_campaign=sql_introduction_book&utm_content=sql_introduction)
+
 
 
 ## Структура таблицы
